@@ -1,3 +1,3 @@
 1m = 0.00000897853
-z = 3.5 là nền đất để bắt đầu dựng lên
+z = 32 là nền đất để bắt đầu dựng lên
 AB là phần cửa đối diện mặt đường
