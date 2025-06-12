@@ -1,3 +1,6 @@
 1m = 0.00000897853
 z = 32 là nền đất để bắt đầu dựng lên
 AB là phần cửa đối diện mặt đường
+Chiều cao một tầng = 3m
+Tầng hầm trong model sẽ thay bằng một tầng bình thường nhưng sẽ ko có ban công mà chỉ có cửa kính, và sẽ có cửa ra vào đặt ở giữa.
+Phòng lớn sẽ có diện tích khoảng 66m^2, phòng nhỏ khoảng 50m^2.
