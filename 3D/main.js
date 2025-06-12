@@ -40,6 +40,7 @@ require([
       },
     });
 
+// Ban cong
 const balconyDoorGraphic = new Graphic({
   geometry: new Point({
     longitude: 106.7929876805271,
@@ -58,6 +59,26 @@ const balconyDoorGraphic = new Graphic({
   },
 });
 graphicsLayer.add(balconyDoorGraphic);
+
+// 2 Cua so
+const WindowGraphic = new Graphic({
+  geometry: new Point({
+    longitude: 106.7929534244384,
+    latitude: 10.8935052931004,
+    z: 32,
+  }),
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./cuaSo.glb"},
+        heading: 206,
+      },
+    ],
+  },
+});
+graphicsLayer.add(WindowGraphic);
 
   // Gộp tất cả data lại
   const allPolygons = [
