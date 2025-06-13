@@ -26,6 +26,9 @@ export const user = pgTable("user", {
   updatedAt: timestamp("updated_at")
     .$defaultFn(() => /* @__PURE__ */ new Date())
     .notNull(),
+  dateOfBirth: timestamp("date_of_birth"),
+  phone: text("phone"),
+  role: text("role").default("user").notNull(),
 });
 
 export const session = pgTable("session", {
@@ -169,5 +172,3 @@ export const floorProperty = pgTable("floor_property", {
   floorId: integer("floor_id").references(() => floor.id),
   propertyId: integer("property_id").references(() => property.id),
 });
-
-
