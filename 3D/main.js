@@ -52,8 +52,8 @@ const balconyDoorGraphic = new Graphic({
     symbolLayers: [
       {
         type: "object",
-        resource: { href: "./banCong1.glb"},
-        heading: 28,
+        resource: { href: "./banCong.glb"},
+        heading: 208,
       },
     ],
   },
@@ -79,6 +79,66 @@ const WindowGraphic = new Graphic({
   },
 });
 graphicsLayer.add(WindowGraphic);
+
+// 1 Cua so
+const Window1Graphic = new Graphic({
+  geometry: new Point({
+    longitude: 106.7930365336328,
+    latitude: 10.8935509400074,
+    z: 32,
+  }),
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./cuaSo1.glb"},
+        heading: 26,
+      },
+    ],
+  },
+});
+graphicsLayer.add(Window1Graphic);
+
+// Mai Nha
+const RoofGraphic = new Graphic({
+  geometry: new Point({
+    longitude: 106.7930582152184,
+    latitude: 10.8934873101101,
+    z: 65,
+  }),
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./maiNha.glb"},
+        heading: 26,
+      },
+    ],
+  },
+});
+graphicsLayer.add(RoofGraphic);
+
+// Cua Chinh
+const DoorGraphic = new Graphic({
+  geometry: new Point({
+    longitude: 106.7930830432921,
+    latitude: 10.893528104248,
+    z: 32,
+  }),
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./cuaChinh.glb"},
+        heading: 26,
+      },
+    ],
+  },
+});
+graphicsLayer.add(DoorGraphic);
 
   // Gộp tất cả data lại
   const allPolygons = [
