@@ -52,7 +52,7 @@ const balconyDoorGraphic = new Graphic({
     symbolLayers: [
       {
         type: "object",
-        resource: { href: "./banCong.glb"},
+        resource: { href: "./mesh/banCong.glb"},
         heading: 208,
       },
     ],
@@ -72,7 +72,7 @@ const WindowGraphic = new Graphic({
     symbolLayers: [
       {
         type: "object",
-        resource: { href: "./cuaSo.glb"},
+        resource: { href: "./mesh/cuaSo.glb"},
         heading: 206,
       },
     ],
@@ -92,7 +92,7 @@ const Window1Graphic = new Graphic({
     symbolLayers: [
       {
         type: "object",
-        resource: { href: "./cuaSo1.glb"},
+        resource: { href: "./mesh/cuaSo1.glb"},
         heading: 26,
       },
     ],
@@ -112,7 +112,7 @@ const RoofGraphic = new Graphic({
     symbolLayers: [
       {
         type: "object",
-        resource: { href: "./maiNha.glb"},
+        resource: { href: "./mesh/maiNha.glb"},
         heading: 26,
       },
     ],
@@ -132,7 +132,7 @@ const DoorGraphic = new Graphic({
     symbolLayers: [
       {
         type: "object",
-        resource: { href: "./cuaChinh.glb"},
+        resource: { href: "./mesh/cuaChinh.glb"},
         heading: 26,
       },
     ],
