@@ -60,6 +60,26 @@ const balconyDoorGraphic = new Graphic({
 });
 graphicsLayer.add(balconyDoorGraphic);
 
+// Ban cong 2
+const balconyDoorGraphic2 = new Graphic({
+  geometry: new Point({
+    longitude: 106.793200987,
+    latitude: 10.8934622631,
+    z: 32,
+  }),
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./mesh/banCong.glb"},
+        heading: -64,
+      },
+    ],
+  },
+});
+graphicsLayer.add(balconyDoorGraphic2);
+
 // 2 Cua so
 const WindowGraphic = new Graphic({
   geometry: new Point({
@@ -139,6 +159,46 @@ const DoorGraphic = new Graphic({
   },
 });
 graphicsLayer.add(DoorGraphic);
+
+// Cua So Lon
+const BigWindowGraphic = new Graphic({
+  geometry: new Point({
+    longitude: 106.79319493,
+    latitude: 10.89350821,
+    z: 31.58,
+  }), 
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./mesh/CuaSoLon.glb"},
+        heading: 206,
+      },
+    ],
+  },
+});
+graphicsLayer.add(BigWindowGraphic);
+
+// Cua So Lon
+const BigWindowGraphic2 = new Graphic({
+  geometry: new Point({
+    longitude: 106.79309606,
+    latitude: 10.89341321,
+    z: 31.58,
+  }), 
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./mesh/CuaSoLon.glb"},
+        heading: 26,
+      },
+    ],
+  },
+});
+graphicsLayer.add(BigWindowGraphic2);
 
   // Gộp tất cả data lại
   const allPolygons = [
