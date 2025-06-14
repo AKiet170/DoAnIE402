@@ -143,8 +143,8 @@ graphicsLayer.add(RoofGraphic);
 // Cua Chinh
 const DoorGraphic = new Graphic({
   geometry: new Point({
-    longitude: 106.7930830432921,
-    latitude: 10.893528104248,
+    longitude: 106.7930717073925,
+    latitude: 10.8935050163874,
     z: 32,
   }),
   symbol: {
@@ -206,7 +206,9 @@ graphicsLayer.add(BigWindowGraphic2);
     ...(window.CotPhongNhoData || []),
     ...(window.TangTrechBenPhaiData || []),
     ...(window.DuongNoiBenPhaiData || []),
-    ...(window.PhongLon2Data || [])
+    ...(window.PhongLon2Data || []),
+    ...(window.PhongGiuaTraiData || []),
+    ...(window.PhongGiuaPhaiData || []),
   ];
 
   allPolygons.forEach((polygon) => {
