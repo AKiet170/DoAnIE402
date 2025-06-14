@@ -200,6 +200,46 @@ const BigWindowGraphic2 = new Graphic({
 });
 graphicsLayer.add(BigWindowGraphic2);
 
+// 2 Cua So Giua Lon (V)
+const CuaSoGiua2 = new Graphic({
+  geometry: new Point({
+    longitude: 106.7930127154656, 
+    latitude: 10.8934216135931,
+    z: 32,
+  }), 
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./mesh/haiCuaSoGiua.glb"},
+        heading: 26.5,
+      },
+    ],
+  },
+});
+graphicsLayer.add(CuaSoGiua2);
+
+// 2 Cua So Giua Nho (V) (Cua Chinh)
+const CuaSoGiuaNho2 = new Graphic({
+  geometry: new Point({
+    longitude: 106.7930717073925,
+    latitude: 10.8935050163874,
+    z: 32,
+  }), 
+  symbol: {
+    type: "point-3d",
+    symbolLayers: [
+      {
+        type: "object",
+        resource: { href: "./mesh/haiCuaSoGiuaNho.glb"},
+        heading: 26.5,
+      },
+    ],
+  },
+});
+graphicsLayer.add(CuaSoGiuaNho2);
+
   // Gộp tất cả data lại
   const allPolygons = [
     ...(window.CotPhongLonData || []),
