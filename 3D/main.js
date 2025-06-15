@@ -78,7 +78,7 @@ const balconyDoorGraphic2 = new Graphic({
     ],
   },
 });
-  
+
 // 2 Cua so
 const WindowGraphic = new Graphic({
   geometry: new Point({
@@ -142,8 +142,8 @@ graphicsLayer.add(RoofGraphic);
 // Cua Chinh
 const DoorGraphic = new Graphic({
   geometry: new Point({
-    longitude: 106.7930830432921,
-    latitude: 10.893528104248,
+    longitude: 106.7930717073925,
+    latitude: 10.8935050163874,
     z: 32,
   }),
   symbol: {
@@ -180,6 +180,7 @@ const BigWindowGraphic = new Graphic({
 graphicsLayer.add(BigWindowGraphic);
 
 // Cua So Lon 2
+
 const BigWindowGraphic2 = new Graphic({
   geometry: new Point({
     longitude: 106.79309606,
@@ -199,13 +200,16 @@ const BigWindowGraphic2 = new Graphic({
 });
 graphicsLayer.add(BigWindowGraphic2);
 
+
   // Gộp tất cả data lại
   const allPolygons = [
     ...(window.CotPhongLonData || []),
     ...(window.CotPhongNhoData || []),
     ...(window.TangTrechBenPhaiData || []),
     ...(window.DuongNoiBenPhaiData || []),
-    ...(window.PhongLon2Data || [])
+    ...(window.PhongLon2Data || []),
+    ...(window.PhongGiuaTraiData || []),
+    ...(window.PhongGiuaPhaiData || []),
   ];
 
   allPolygons.forEach((polygon) => {
