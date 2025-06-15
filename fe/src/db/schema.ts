@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   pgTable,
   integer,
@@ -89,19 +88,24 @@ export const maintenanceStatusEnum = pgEnum("maintenance_status", [
 ]);
 export const contractTypeEnum = pgEnum("contract_type", ["rent", "sale"]);
 
-export const floor = pgTable("floor", {
-  id: serial("id").primaryKey(),
+export const floors = pgTable("floor", {
+  id: integer("id").primaryKey(),
   floorNumber: integer("floor_number"),
   buildingName: varchar("building_name", { length: 255 }),
 });
+export type InsertFloorType = typeof floors.$inferInsert;
+export type SelectFloorType = typeof floors.$inferSelect;
 
 export const apartments = pgTable("apartments", {
-  id: serial("id").primaryKey(),
+  id: integer("id").primaryKey(),
   roomNumber: integer("room_number"),
   type: apartmentTypeEnum("type"),
   status: boolean("status"),
-  floorId: integer("floor_id").references(() => floor.id),
+  floorId: integer("floor_id").references(() => floors.id),
+  area: decimal("area", { precision: 10, scale: 2 }).notNull(),
 });
+export type InsertApartmentType = typeof apartments.$inferInsert;
+export type SelectApartmentType = typeof apartments.$inferSelect;
 
 export const residents = pgTable("residents", {
   id: serial("id").primaryKey(),
@@ -110,6 +114,8 @@ export const residents = pgTable("residents", {
   userId: text("user_id").references(() => user.id),
   apartmentId: integer("apartment_id").references(() => apartments.id),
 });
+export type InsertResidentType = typeof residents.$inferInsert;
+export type SelectResidentType = typeof residents.$inferSelect;
 
 export const maintenanceRequests = pgTable("maintenance_requests", {
   id: serial("id").primaryKey(),
@@ -121,6 +127,10 @@ export const maintenanceRequests = pgTable("maintenance_requests", {
   residentId: integer("resident_id").references(() => residents.id),
   apartmentId: integer("apartment_id").references(() => apartments.id),
 });
+export type InsertMaintenanceRequestType =
+  typeof maintenanceRequests.$inferInsert;
+export type SelectMaintenanceRequestType =
+  typeof maintenanceRequests.$inferSelect;
 
 export const notification = pgTable("notification", {
   id: serial("id").primaryKey(),
@@ -131,6 +141,8 @@ export const notification = pgTable("notification", {
     () => maintenanceRequests.id
   ),
 });
+export type InsertNotificationType = typeof notification.$inferInsert;
+export type SelectNotificationType = typeof notification.$inferSelect;
 
 export const contract = pgTable("contract", {
   id: serial("id").primaryKey(),
@@ -141,6 +153,8 @@ export const contract = pgTable("contract", {
   status: boolean("status"),
   apartmentId: integer("apartment_id").references(() => apartments.id),
 });
+export type InsertContractType = typeof contract.$inferInsert;
+export type SelectContractType = typeof contract.$inferSelect;
 
 export const furnitures = pgTable("furnitures", {
   id: serial("id").primaryKey(),
@@ -149,6 +163,8 @@ export const furnitures = pgTable("furnitures", {
   defaultImage: varchar("default_image", { length: 255 }),
   createdAt: date("created_at"),
 });
+export type InsertFurnitureType = typeof furnitures.$inferInsert;
+export type SelectFurnitureType = typeof furnitures.$inferSelect;
 
 export const apartmentFurnitures = pgTable("apartment_furnitures", {
   id: serial("id").primaryKey(),
@@ -158,6 +174,10 @@ export const apartmentFurnitures = pgTable("apartment_furnitures", {
   apartmentId: integer("apartment_id").references(() => apartments.id),
   furnitureId: integer("furniture_id").references(() => furnitures.id),
 });
+export type InsertApartmentFurnitureType =
+  typeof apartmentFurnitures.$inferInsert;
+export type SelectApartmentFurnitureType =
+  typeof apartmentFurnitures.$inferSelect;
 
 export const property = pgTable("property", {
   id: serial("id").primaryKey(),
@@ -165,10 +185,14 @@ export const property = pgTable("property", {
   description: text("description"),
   createdAt: date("created_at"),
 });
+export type InsertPropertyType = typeof property.$inferInsert;
+export type SelectPropertyType = typeof property.$inferSelect;
 
 export const floorProperty = pgTable("floor_property", {
   id: serial("id").primaryKey(),
   quantity: integer("quantity"),
-  floorId: integer("floor_id").references(() => floor.id),
+  floorId: integer("floor_id").references(() => floors.id),
   propertyId: integer("property_id").references(() => property.id),
 });
+export type InsertFloorPropertyType = typeof floorProperty.$inferInsert;
+export type SelectFloorPropertyType = typeof floorProperty.$inferSelect;
