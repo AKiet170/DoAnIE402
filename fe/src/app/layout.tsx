@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
+import "@/app/arcgis.css";
 import { Toaster } from "sonner";
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
