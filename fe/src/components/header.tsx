@@ -71,7 +71,7 @@ export default function Header({ session, user }: HeaderProps) {
       icon: <Building className="h-4 w-4" />,
     },
     {
-      label: "Quản lý đơn",
+      label: "Quản lý hợp đồng",
       href: "#",
       icon: <FileText className="h-4 w-4" />,
     },
