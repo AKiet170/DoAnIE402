@@ -59,10 +59,10 @@ export default function Header({ session, user }: HeaderProps) {
       icon: <Building className="h-4 w-4" />,
     },
     { label: "Quản lý bảo trì", href: "#", icon: <Tool className="h-4 w-4" /> },
-    { label: "Vị trí căn hộ", href: "#", icon: <MapPin className="h-4 w-4" /> },
+    { label: "Vị trí căn hộ", href: "/location", icon: <MapPin className="h-4 w-4" /> },
     {
       label: "Thông tin căn hộ",
-      href: "#",
+      href: "/apartments",
       icon: <Info className="h-4 w-4" />,
     },
     {
