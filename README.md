@@ -1,6 +1,6 @@
 # Yêu cầu cài đặt
--Node.js v16 trở lên
--npm (Node Package Manager)
+* Node.js v16 trở lên
+* npm (Node Package Manager)
 # Cách chạy demo web
 1. Clone repo về máy
 2. Truy cập vào folder fe
