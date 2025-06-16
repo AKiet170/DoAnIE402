@@ -5,7 +5,7 @@ UrbanVista là một ứng dụng web giúp quản lý và trực quan hóa dữ
 ## Yêu cầu cài đặt
 * Node.js v16 trở lên
 * npm (Node Package Manager)
-* 
+
 ## Cách chạy demo web
 1. Clone repo về máy
 2. Truy cập vào folder fe
@@ -16,8 +16,8 @@ UrbanVista là một ứng dụng web giúp quản lý và trực quan hóa dữ
    BETTER_AUTH_URL=http://localhost:3000
    ```
 5. Khởi tại 1 terminal mới và chạy các lệnh sau theo thứ tự:
-   1. `npm install`
-   2. `npm run build`
-   3. `npm run start`
+   - `npm install`
+   - `npm run build`
+   - `npm run start`
   
 6. Truy cập vào [`đường dẫn`](http://localhost:3000/)
