@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>3D</title>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.29/"></script>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+
+    <script>
+      require([
+        "esri/Map",
+        "esri/views/SceneView",
+        "esri/layers/GraphicsLayer",
+        "esri/Graphic"
+      ], function(Map, SceneView, GraphicsLayer, Graphic) {
+        const map = new Map({
+          basemap: "topo-vector",
+          ground: "world-elevation"
+        });
+
+        const view = new SceneView({
+          container: "viewDiv",
+          map: map,
+          camera: {
+            position: {
+              x: 106.793,
+              y: 10.8935,
+              z: 200
+            },
+            tilt: 75
+          }
+        });
+
+        const graphicsLayer = new GraphicsLayer();
+        map.add(graphicsLayer);
+
+        function createGraphic(polygonData) {
+          return new Graphic({
+            geometry: {
+              type: "polygon",
+              rings: polygonData.geometry.rings,
+              spatialReference: { wkid: 4326 }
+            },
+            symbol: polygonData.symbol
+          });
+        }
+
+        fetch("http://localhost:8000/polygons")
+          .then(res => res.json())
+          .then(data => {
+            data.forEach(polygon => {
+              graphicsLayer.add(createGraphic(polygon));
+            });
+          })
+          .catch(err => console.error("Lỗi khi tải polygons từ API:", err));
+      });
+    </script>
+  </body>
+</html>
